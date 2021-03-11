@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.dropbtn {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+</style>
+</head>
+<body>
+
+<h1>Here is {{name}}'s Bowling Game Score </h1>
+<h2>Clickable Dropdown</h2>
+<p>Click on the button to submit the score</p>
+
+<form action = "http://0.0.0.0:81/getscore" method= "POST">
+  <table style="width:100%" border="1">
+      <caption>Record Your rolls</caption>
+      <tr>
+        <th>Frame#</th>
+        <th>Frame1</th>
+        <th>Frame2</th>
+        <th>Frame3</th>
+        <th>Frame4</th>
+        <th>Frame5</th>
+        <th>Frame6</th>
+        <th>Frame7</th>
+        <th>Frame8</th>
+        <th>Frame9</th>
+        <th>Frame10</th>
+      </tr>
+      <tr>
+        <th>score1</th>
+        <td><input type='text'placeholder='score1' name=frame1-first></td>
+        <td><input type='text'placeholder='score1' name=frame2-first></td>
+        <td><input type='text'placeholder='score1' name=frame3-first></td>
+        <td><input type='text'placeholder='score1' name=frame4-first></td>
+        <td><input type='text'placeholder='score1' name=frame5-first></td>
+        <td><input type='text'placeholder='score1' name=frame6-first></td>
+        <td><input type='text'placeholder='score1' name=frame7-first></td>
+        <td><input type='text'placeholder='score1' name=frame8-first></td>
+        <td><input type='text'placeholder='score1' name=frame9-first></td>
+        <td><input type='text'placeholder='score1' name=frame10-first></td>
+      </tr>
+      <tr>
+        <th>score2</th>
+        <td><input type='text'placeholder='score2' name=frame1-second></td>
+        <td><input type='text'placeholder='score2' name=frame2-second></td>
+        <td><input type='text'placeholder='score2' name=frame3-second></td>
+        <td><input type='text'placeholder='score2' name=frame4-second></td>
+        <td><input type='text'placeholder='score2' name=frame5-second></td>
+        <td><input type='text'placeholder='score2' name=frame6-second></td>
+        <td><input type='text'placeholder='score2' name=frame7-second></td>
+        <td><input type='text'placeholder='score2' name=frame8-second></td>
+        <td><input type='text'placeholder='score2' name=frame9-second></td>
+        <td><input type='text'placeholder='score2' name=frame10-second></td>
+      </tr>
+      <tr>
+        <th>score3</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><input type='text' placeholder='score3' name=frame10-third></td>
+      </tr>
+   </table>
+
+   <p><input type="submit" value="submit" /></p>
+</form>
+
+
+<!-- <div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+  <div id="myDropdown" class="dropdown-content">
+      <select>
+        <option value="" selected disabled hidden>Choose here</option>
+        <option value="-">-</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="2">6</option>
+        <option value="3">7</option>
+        <option value="4">8</option>
+        <option value="4">9</option>
+        <option value="4">x</option>
+      </select>
+      <input type="submit" value="Score" name="roll_score">
+  </div>
+</div>
+
+<script> -->
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        // openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
+</body>
+</html>
